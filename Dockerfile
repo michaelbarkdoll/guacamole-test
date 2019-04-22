@@ -8,9 +8,9 @@ RUN git config --global user.name "Michael Barkdoll"
 RUN git config --global user.email "mabarkdoll@siu.edu"
 
 RUN mkdir /ldap
-RUN cd /ldap
+WORKDIR /ldap
 RUN git clone https://github.com/necouchman/guacamole-client.git
-RUN cd /ldap/guacamole-client
+WORKDIR /ldap/guacamole-client
 RUN git checkout master
 
 RUN git pull origin jira/234
